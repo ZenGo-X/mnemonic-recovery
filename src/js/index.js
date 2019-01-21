@@ -124,9 +124,7 @@
         // Events
 
         DOM.phrase.on("input", delayedPhraseChanged);
-        DOM.passphrase.on("input", delayedPhraseChanged);
-        DOM.rootKey.on("input", delayedRootKeyChanged);
-
+ 
         setQrEvents(DOM.showQrEls);
         disableForms();
         hidePending();
@@ -169,60 +167,7 @@
 
 
 
-    function delayedRootKeyChanged() {
-        // Warn if there is an existing mnemonic or passphrase.
-        if (DOM.phrase.val().length > 0 || DOM.passphrase.val().length > 0) {
-            if (!confirm("This will clear existing mnemonic and passphrase")) {
-                DOM.rootKey.val(bip32RootKey);
-                return
-            }
-        }
-        hideValidationError();
-        showPending();
-        // Clear existing mnemonic and passphrase
-        DOM.phrase.val("");
-        DOM.passphrase.val("");
-        seed = null;
-        if (rootKeyChangedTimeoutEvent != null) {
-            clearTimeout(rootKeyChangedTimeoutEvent);
-        }
-        rootKeyChangedTimeoutEvent = setTimeout(rootKeyChanged, 400);
-    }
 
-    function rootKeyChanged() {
-        showPending();
-        hideValidationError();
-        var rootKeyBase58 = DOM.rootKey.val();
-        var errorText = validateRootKey(rootKeyBase58);
-        if (errorText) {
-            showValidationError(errorText);
-            return;
-        }
-        // Calculate and display
-        calcBip32RootKeyFromBase58(rootKeyBase58);
-        calcForDerivationPath();
-    }
-
-
-    function languageChanged() {
-        setTimeout(function() {
-            setMnemonicLanguage();
-            if (DOM.phrase.val().length > 0) {
-                var newPhrase = convertPhraseToNewLanguage();
-                DOM.phrase.val(newPhrase);
-                phraseChanged();
-            }
-            else {
-                DOM.generate.trigger("click");
-            }
-        }, 50);
-    }
-
-    function bitcoinCashAddressTypeChange() {
-        phraseChanged();
-    }
-
- 
 
     // Private methods
 
