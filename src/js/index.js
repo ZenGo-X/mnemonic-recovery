@@ -126,8 +126,7 @@
         DOM.phrase.on("input", delayedPhraseChanged);
  
         setQrEvents(DOM.showQrEls);
-        disableForms();
-        hidePending();
+        //hidePending();
         hideValidationError();
  
     }
@@ -140,7 +139,6 @@
         seed = null;
         bip32RootKey = null;
         bip32ExtendedKey = null;
-        clearAddressesList();
         showPending();
         if (phraseChangeTimeoutEvent != null) {
             clearTimeout(phraseChangeTimeoutEvent);
@@ -393,51 +391,6 @@ function DerivePublicAddresses(phrase, word = "(no missing word)")
 
 
 
-    function clearDisplay() {
-        clearAddressesList();
-        clearKeys();
-        hideValidationError();
-    }
-
-    function clearAddressesList() {
-        DOM.addresses.empty();
-        DOM.csv.val("");
-        stopGenerating();
-    }
-
-    function stopGenerating() {
-        while (generationProcesses.length > 0) {
-            var generation = generationProcesses.shift();
-            generation.stop();
-        }
-    }
-
-    function clearKeys() {
-        clearRootKey();
-        clearDerivedKeys();
-    }
-
-    function clearRootKey() {
-        DOM.rootKey.val("");
-    }
-
-
-
-
-
-    function disableForms() {
-        $("form").on("submit", function(e) {
-            e.preventDefault();
-        });
-    }
-
-    function parseIntNoNaN(val, defaultVal) {
-        var v = parseInt(val);
-        if (isNaN(v)) {
-            return defaultVal;
-        }
-        return v;
-    }
 
     function showPending() {
         DOM.feedback
