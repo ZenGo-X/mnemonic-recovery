@@ -125,7 +125,6 @@
 
         DOM.phrase.on("input", delayedPhraseChanged);
         DOM.passphrase.on("input", delayedPhraseChanged);
-        DOM.generate.on("click", generateClicked);
         DOM.rootKey.on("input", delayedRootKeyChanged);
 
         setQrEvents(DOM.showQrEls);
@@ -204,25 +203,6 @@
         calcForDerivationPath();
     }
 
- 
-
- 
-
-    function generateClicked() {
-        if (isUsingOwnEntropy()) {
-            return;
-        }
-        clearDisplay();
-        showPending();
-        setTimeout(function() {
-            setMnemonicLanguage();
-            var phrase = generateRandomPhrase();
-            if (!phrase) {
-                return;
-            }
-            phraseChanged();
-        }, 50);
-    }
 
     function languageChanged() {
         setTimeout(function() {
@@ -516,12 +496,6 @@ function DerivePublicAddresses(phrase, word = "(no missing word)")
         }
         return false;
     }
-
-
-
-
-   
-
 
 
 
