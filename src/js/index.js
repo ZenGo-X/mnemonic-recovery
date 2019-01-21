@@ -273,7 +273,8 @@
             }
 
         }
- var ethAddr=[]
+ /* check addresses balance with API
+  var ethAddr=[]
  
  //Iterate all td's in column 4
  $('.addresses-recovery tr').each( function(){
@@ -300,7 +301,7 @@
        console.log("success!");
        }
        });
-    }
+    }*/
  }
 function DerivePublicAddresses(phrase, word = "(no missing word)")
  {
