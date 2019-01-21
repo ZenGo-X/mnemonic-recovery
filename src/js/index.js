@@ -393,58 +393,6 @@ function DerivePublicAddresses(phrase, word = "(no missing word)")
 
 
 
-    function findDerivationPathErrors(path) {
-        // TODO is not perfect but is better than nothing
-        // Inspired by
-        // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#test-vectors
-        // and
-        // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#extended-keys
-        var maxDepth = 255; // TODO verify this!!
-        var maxIndexValue = Math.pow(2, 31); // TODO verify this!!
-        if (path[0] != "m") {
-            return "First character must be 'm'";
-        }
-        if (path.length > 1) {
-            if (path[1] != "/") {
-                return "Separator must be '/'";
-            }
-            var indexes = path.split("/");
-            if (indexes.length > maxDepth) {
-                return "Derivation depth is " + indexes.length + ", must be less than " + maxDepth;
-            }
-            for (var depth = 1; depth<indexes.length; depth++) {
-                var index = indexes[depth];
-                var invalidChars = index.replace(/^[0-9]+'?$/g, "")
-                if (invalidChars.length > 0) {
-                    return "Invalid characters " + invalidChars + " found at depth " + depth;
-                }
-                var indexValue = parseInt(index.replace("'", ""));
-                if (isNaN(depth)) {
-                    return "Invalid number at depth " + depth;
-                }
-                if (indexValue > maxIndexValue) {
-                    return "Value of " + indexValue + " at depth " + depth + " must be less than " + maxIndexValue;
-                }
-            }
-        }
-        // Check root key exists or else derivation path is useless!
-        if (!bip32RootKey) {
-            return "No root key";
-        }
-        // Check no hardened derivation path when using xpub keys
-        var hardenedPath = path.indexOf("'") > -1;
-        var hardenedAddresses = bip32TabSelected() && DOM.hardenedAddresses.prop("checked");
-        var hardened = hardenedPath || hardenedAddresses;
-        var isXpubkey = bip32RootKey.isNeutered();
-        if (hardened && isXpubkey) {
-            return "Hardened derivation path is invalid with xpub key";
-        }
-        return false;
-    }
-
-
-
-
     function clearDisplay() {
         clearAddressesList();
         clearKeys();
