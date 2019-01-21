@@ -126,7 +126,6 @@
         DOM.phrase.on("input", delayedPhraseChanged);
  
         setQrEvents(DOM.showQrEls);
-        //hidePending();
         hideValidationError();
  
     }
@@ -156,19 +155,16 @@
             showValidationError(errorText);
             return;
         }
+        hideValidationError();
+        if (phrase.includes("?")){ //missing words options already displayed
+            return;
+        }
         $('.addresses-recovery tr').remove();
         DerivePublicAddresses(phrase)
-
-    }
+     }
  
  
-
-
-
-
-
     // Private methods
-
 
 
     function calcBip32RootKeyFromSeed(phrase, passphrase) {
@@ -249,7 +245,7 @@
  
         if (unknownWordIndex != -1) {
             wordBruteforce(words, unknownWordIndex);
-            return "trying to find missing word";
+            return false;
         }
         // Check the words are valid
         var properPhrase = wordArrayToPhrase(words);
