@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <title>Mnemonic Phrase Recovery Tool</title>
+        <link rel="stylesheet" href="css/bootstrap-3.3.7.css">
+        <link rel="stylesheet" href="css/app.css">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Mnemonic Phrase Recovery Tool" name="description" />
+        <meta content="Tal Be'ery (KZen Networks)" name="author" />
+        <link type="image/x-icon" rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" />
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 class="text-center">Mnemonic Phrase Recovery Tool</h1>
+            <p class="version">v0.1</p>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <!--h2>Mnemonic</h2-->
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <p> This tool is meant to help users with slightly incorrect mnemonics. You can enter an existing BIP39 mnemonic and get derived adresses in various format. If a word is wrong, the tool will try to suggest the closest option. If a word is missing or unknown, please type "?" instead and the tool will find all legal options. </p>
+                                <p>
+                                    For more info see the
+                                    <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP39 spec</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group generate-container">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <div class="form-inline">
+                                    <div class="input-group-inline">
+                                         <span>enter your mnemonic</span>:
+                                    
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phrase" class="col-sm-2 control-label">BIP39 Mnemonic</label>
+                            <div class="col-sm-10">
+                                <textarea id="phrase" class="phrase private-data form-control" data-show-qr></textarea>
+                            </div>
+                        </div>
+                        
+                        
+                        <table class="table table-striped" >
+                            <thead>
+                                <th>
+                                    <div class="input-group">
+                                        <span>Recovered Word</span>&nbsp;&nbsp;
+                                        
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <span>BIP44 BTC Address</span>&nbsp;&nbsp;
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <span>BIP49 BTC Address</span>&nbsp;&nbsp;
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <span>BIP84 BTC Address</span>&nbsp;&nbsp;
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="input-group">
+                                        <span>BIP44 ETH Address</span>&nbsp;&nbsp;
+                                    </div>
+                                </th>
+                                
+                            </thead>
+                            <tbody class="addresses-recovery monospace">
+                           
+                            </tbody>
+                        </table>
+                        
+                        </div>
+                
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>License</h2>
+                    <p>
+                    <span>Please refer to <a href="https://github.com/KZen-networks/mnemonic-recovery/blob/master/LICENSE" target="_blank">the software license</a> for more detail.
+                    </span>
+                    </p>
+                    <p>The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</p>
+                </div>
+            </div>
+
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Offline Usage</h2>
+
+                    <p>
+                    You can use this tool without having to be online.
+                    </p>
+                    <p>
+                    In your browser, select file save-as, and save this page
+                    as a file.
+                    </p>
+                    <p>
+                    Double-click that file to open it in a browser
+                    on any offline computer.
+                    </p>
+                    <p>
+                    <span>Alternatively, download the file from the repository</span>
+                    -
+                    <a href="https://github.com/KZen-networks/mnemonic-recovery/">https://github.com/KZen-networks/mnemonic-recovery/</a>
+                    </p>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>This project is 100% open-source code</h2>
+
+                    <p>
+                        <span>Get the source code from the repository</span>
+                        -
+                        <a href="https://github.com/KZen-networks/mnemonic-recovery" target="_blank">
+                            https://github.com/KZen-networks/mnemonic-recovery
+                        </a>
+                    </p>
+                    
+                    <p>
+                    <span>The project is based on Ian Coleman's Bip39 project. Get Bip39's source code from the repository</span>
+                    -
+                    <a href="https://github.com/iancoleman/bip39" target="_blank">
+                        https://github.com/iancoleman/bip39
+                    </a>
+                    </p>
+
+                    <h3>Libraries</h3>
+
+                    <p>
+                        <span>BitcoinJS - </span>
+                        <a href="https://github.com/bitcoinjs/bitcoinjs-lib" target="_blank">
+                            https://github.com/bitcoinjs/bitcoinjs-lib
+                        </a>
+                    </p>
+
+                    <p>
+                        <span>jsBIP39 - </span>
+                        <a href="https://github.com/iancoleman/jsbip39" target="_blank">
+                            https://github.com/iancoleman/jsbip39
+                        </a>
+                    </p>
+
+                    <p>
+                        <span>sjcl - </span>
+                        <a href="https://github.com/bitwiseshiftleft/sjcl" target="_blank">
+                            https://github.com/bitwiseshiftleft/sjcl
+                        </a>
+                    </p>
+
+                    <p>
+                        <span>jQuery - </span>
+                        <a href="https://jquery.com/" target="_blank">
+                            https://jquery.com/
+                        </a>
+                    </p>
+
+                    <p>
+                        <span>Twitter Bootstrap - </span>
+                        <a href="http://getbootstrap.com/" target="_blank">
+                            http://getbootstrap.com/
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="qr-container hidden">
+            <div class="qr-hint bg-primary hidden">Click field to hide QR</div>
+            <div class="qr-hint bg-primary">Click field to show QR</div>
+            <div class="qr-hider hidden">
+                <div class="qr-image"></div>
+                <div class="qr-warning bg-primary">Caution: Scanner may keep history</div>
+            </div>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback">Loading...</div>
+        </div>
+
+        <script type="text/template" id="address-row-template">
+            <tr>
+                <td class="index"><span></span></td>
+                <td class="address"><span data-show-qr></span></td>
+                <td class="pubkey"><span data-show-qr></span></td>
+                <td class="privkey private-data"><span data-show-qr></span></td>
+            </tr>
+        </script>
+        <script src="js/polyfill.es6.js"></script>
+        <script src="js/basex.js"></script>
+        <script src="js/unorm.js"></script>
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap-3.3.7.js"></script>
+        <script src="js/levenshtein.js"></script>
+        <script src="js/kjua-0.1.1.min.js"></script>
+        <script src="js/bitcoinjs-3.3.2.js"></script>
+        <script src="js/bitcoinjs-extensions.js"></script>
+        <script src="js/bitcoinjs-bip38-2.0.2.js"></script>
+        <script src="js/segwit-parameters.js"></script>
+        <script src="js/ethereumjs-util.js"></script>
+        <script src="js/ripple-util.js"></script>
+        <script src="js/bchaddrjs-0.2.1.js"></script>
+        <script src="js/sjcl-bip39.js"></script>
+        <script src="js/wordlist_english.js"></script>
+        <script src="js/wordlist_japanese.js"></script>
+        <script src="js/wordlist_spanish.js"></script>
+        <script src="js/wordlist_chinese_simplified.js"></script>
+        <script src="js/wordlist_chinese_traditional.js"></script>
+        <script src="js/wordlist_french.js"></script>
+        <script src="js/wordlist_italian.js"></script>
+        <script src="js/wordlist_korean.js"></script>
+        <script src="js/jsbip39.js"></script>
+        <script src="js/biginteger.js"></script>
+        <script src="js/zxcvbn.js"></script>
+        <script src="js/entropy.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
