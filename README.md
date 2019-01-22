@@ -6,11 +6,11 @@ The tool is based on the bip39 project by Ian Coleman https://github.com/iancole
 
 ## Online Version
 
-https://iancoleman.io/bip39/
+https://kzen-networks.github.io/mnemonic-recovery/mnemonic-standalone.html
 
 ## Standalone offline version
 
-Download `mnemonic.html`
+Download `mnemonic-standalone.html`
 
 Open the file in a browser by double clicking it.
 
@@ -33,7 +33,7 @@ The tool suggests several options for the missing word and the relevant one will
 
 ## Making changes
 
-Please do not make modifications to `mnemonic.html`, since they will
+Please do not make modifications to `mnemonic-standalone.html`, since they will
 be overwritten by `compile.py`.
 
 Make changes in `src/*`.
