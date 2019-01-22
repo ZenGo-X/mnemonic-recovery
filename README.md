@@ -8,7 +8,7 @@ The tool is based on the bip39 project by Ian Coleman https://github.com/iancole
 
 ## Online Version
 
-https://kzen-networks.github.io/mnemonic-recovery/mnemonic-standalone.html
+https://kzen-networks.github.io/mnemonic-recovery/src/index.html
 
 ## Standalone offline version
 
