@@ -1,7 +1,9 @@
 # Seed Savior
 
 A tool for recovering BIP39 seed phrases.
-For more backgrounnd see [blog]
+
+For more context background see [blog]
+
 The tool is based on the bip39 project by Ian Coleman https://github.com/iancoleman/bip39
 
 ## Online Version
