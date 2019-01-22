@@ -2,7 +2,7 @@
 
 A tool for recovering BIP39 seed phrases.
 
-For more context background see [blog]
+For more context and background, please see our blog post https://medium.com/kzen-networks/the-wallet-seed-saviors-2cad8ae542f3 
 
 The tool is based on the bip39 project by Ian Coleman https://github.com/iancoleman/bip39
 
