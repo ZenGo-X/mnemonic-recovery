@@ -2,6 +2,7 @@
 
 A tool for recovering BIP39 seed phrases.
 For more backgrounnd see [blog]
+The tool is based on the bip39 project by Ian Coleman https://github.com/iancoleman/bip39
 
 ## Online Version
 
@@ -27,7 +28,7 @@ In this demo we enter "phrase brief ceiling dream rack install fault insane pani
 
 The tool suggests several options for the missing word and the relevant one will be "asset". We can verify that by clicking on the link of the dervied Ethereum address ("0x2dfF20b40504f99c6314ac30e8DF5c02dd8058e7" listed in the "BIP44 ETH Address" column) and checking the address has transaction history.
 
-![alt text](https://static.fsf.org/nosvn/images/bitcoin_qrcodes/fsf.png "FSF Bitcoin Address")
+![Demo](https://github.com/KZen-networks/mnemonic-recovery/src/img/seed%20demo%20annotated.gif "Demo")
 
 
 ## Making changes
